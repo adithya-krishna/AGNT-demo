@@ -57,16 +57,19 @@ class Card extends Component {
 		return (
 			<RTCard {...others} theme={theme}>
 				<RTCardMedia
+					contentOverlay
 					theme={theme}
 					className={cn({ [theme.isLoading]: isLoading })}
 					aspectRatio={aspectRatio}
 					image={imageURL}
-				/>
-				<RTCardTitle
-					theme={theme}
-					className={cn({ [theme.isLoading]: isLoading })}
-					title={title}
-					subtitle={subtitle}
+					children={
+						<RTCardTitle
+							theme={theme}
+							className={cn({ [theme.isLoading]: isLoading })}
+							title={title}
+							subtitle={subtitle}
+						/>
+					}
 				/>
 				<RTCardText
 					theme={theme}

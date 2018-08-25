@@ -15,6 +15,7 @@ class Main extends Component {
 			<article className={theme.pageWrapper}>
 				<ViewportContainer theme={theme}>
 					<Card
+						raised
 						theme={theme}
 						title={'title'}
 						subtitle={'subtitle'}
@@ -24,6 +25,7 @@ class Main extends Component {
 						}
 					/>
 					<Card
+						raised
 						theme={theme}
 						title={'title'}
 						subtitle={'subtitle'}
@@ -33,15 +35,7 @@ class Main extends Component {
 						}
 					/>
 					<Card
-						theme={theme}
-						title={'title'}
-						subtitle={'subtitle'}
-						image={'https://placeimg.com/640/480/people'}
-						cardText={
-							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-						}
-					/>
-					<Card
+						raised
 						theme={theme}
 						title={'title'}
 						subtitle={'subtitle'}
@@ -51,6 +45,7 @@ class Main extends Component {
 						}
 					/>
 					<Card
+						raised
 						theme={theme}
 						title={'title'}
 						subtitle={'subtitle'}
@@ -60,10 +55,121 @@ class Main extends Component {
 						}
 					/>
 					<Card
+						raised
 						theme={theme}
 						title={'title'}
 						subtitle={'subtitle'}
-						image={'https://placeimg.com/640/480/people'}
+						image={'https://placeimg.com/640/480/any'}
+						cardText={
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+						}
+					/>
+					<Card
+						raised
+						theme={theme}
+						title={'title'}
+						subtitle={'subtitle'}
+						image={'https://placeimg.com/800/450/nature'}
+						cardText={
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+						}
+					/>
+					<Card
+						raised
+						theme={theme}
+						title={'title'}
+						subtitle={'subtitle'}
+						image={'https://placeimg.com/640/480/any'}
+						cardText={
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+						}
+					/>
+					<Card
+						raised
+						theme={theme}
+						title={'title'}
+						subtitle={'subtitle'}
+						image={'https://placeimg.com/800/450/nature'}
+						cardText={
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+						}
+					/>
+					<Card
+						raised
+						theme={theme}
+						title={'title'}
+						subtitle={'subtitle'}
+						image={'https://placeimg.com/640/480/any'}
+						cardText={
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+						}
+					/>
+					<Card
+						raised
+						theme={theme}
+						title={'title'}
+						subtitle={'subtitle'}
+						image={'https://placeimg.com/800/450/nature'}
+						cardText={
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+						}
+					/>
+					<Card
+						raised
+						theme={theme}
+						title={'title'}
+						subtitle={'subtitle'}
+						image={'https://placeimg.com/640/480/any'}
+						cardText={
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+						}
+					/>
+					<Card
+						raised
+						theme={theme}
+						title={'title'}
+						subtitle={'subtitle'}
+						image={'https://placeimg.com/800/450/nature'}
+						cardText={
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+						}
+					/>
+					<Card
+						raised
+						theme={theme}
+						title={'title'}
+						subtitle={'subtitle'}
+						image={'https://placeimg.com/640/480/any'}
+						cardText={
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+						}
+					/>
+					<Card
+						raised
+						theme={theme}
+						title={'title'}
+						subtitle={'subtitle'}
+						image={'https://placeimg.com/800/450/nature'}
+						cardText={
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+						}
+					/>
+					<Card
+						raised
+						theme={theme}
+						title={'title'}
+						subtitle={'subtitle'}
+						image={'https://placeimg.com/640/480/any'}
+						cardText={
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+						}
+					/>
+					<Card
+						raised
+						theme={theme}
+						title={'title'}
+						subtitle={'subtitle'}
+						image={'https://placeimg.com/800/450/nature'}
 						cardText={
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 						}

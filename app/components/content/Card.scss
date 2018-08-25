@@ -8,21 +8,42 @@
 }
 
 .card {
+	border-radius: $cardBorderRadius;
 	.cardMedia {
+		.content {
+			&.contentOverlay {
+				background: linear-gradient(
+					to bottom,
+					transparent 0%,
+					transparent 60%,
+					rgba(0, 0, 0, 0.8) 100%
+				);
+
+				.cardTitle {
+					padding: 1.6 * $unit;
+					&.large {
+						&.isLoading {
+							.title,
+							.subtitle {
+								@extend %pulsate;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.isLoading {
+			.content {
+				&.contentOverlay {
+					background: none;
+				}
+			}
+		}
+
 		&.square {
 			&.isLoading {
 				@extend %pulsate;
-			}
-		}
-	}
-
-	.cardTitle {
-		&.large {
-			&.isLoading {
-				.title,
-				.subtitle {
-					@extend %pulsate;
-				}
 			}
 		}
 	}
