@@ -1,0 +1,14 @@
+@import 'react-toolbox/lib/colors.css';
+@import 'components/variables.scss';
+@import 'components/helpers.scss';
+@import 'components/mixins.scss';
+
+$stickyFooterHeight: $stickyFooterRatio * $unit;
+$footerBGColor: var(--palette-grey-900);
+$footerTextColor: var(--color-white);
+$footerBaseHeight: 8 * $unit;
+$footerLinksHeight: $stickyFooterHeight - $footerBaseHeight;
+$footerLinksYPadding: 3.04 * $unit;
+$appStoreButtonYPadding: 0.4 * $unit;
+$appStoreButtonXPadding: 1 * $unit;
+$appStoreButtonYMargins: 1.4 * $unit;

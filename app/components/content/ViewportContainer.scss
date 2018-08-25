@@ -1,0 +1,6 @@
+@import './config.scss';
+
+.container {
+	lost-utility: clearfix;
+	@include centerBlock($baseScreenWidth);
+}

@@ -1,0 +1,5 @@
+@import 'components/variables.scss';
+@import 'components/mixins.scss';
+@import 'components/animations.scss';
+
+$pageWrapperHeight: $stickyFooterRatio * $unit;

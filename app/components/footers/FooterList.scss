@@ -1,0 +1,54 @@
+@import './config.scss';
+$fontSizeFraction: 1.4;
+$fontSize: $fontSizeFraction * $unit;
+$iconSize: 2.4 * $unit;
+$iconLinkMargin: ($footerBaseHeight - $iconSize) / 2;
+
+.footerList {
+	@extend %removeMargin;
+	@extend %removePadding;
+	color: $footerTextColor;
+	list-style: none;
+	lost-utility: clearfix;
+
+	&.horizontal {
+		.link {
+			float: left;
+			&:not(.iconLink) {
+				line-height: $footerBaseHeight;
+				padding: 0 (1.6 * $unit);
+			}
+		}
+	}
+
+	.link {
+		font-size: $fontSize;
+		line-height: $fontSize + 14;
+		font-weight: 500;
+		color: darken(white, 45%);
+		cursor: pointer;
+
+		&:hover {
+			color: white;
+		}
+
+		&.title {
+			color: $footerTextColor;
+			font-size: $fontSize * 1.2;
+			padding-bottom: 1 * $unit;
+			font-weight: 700;
+		}
+
+		&.iconLink {
+			@include size($iconSize, $iconSize);
+
+			margin: $iconLinkMargin (0.6 * $unit);
+			color: darken(white, 45%);
+			fill: darken(white, 45%);
+			&:hover {
+				color: white;
+				fill: white;
+			}
+		}
+	}
+}

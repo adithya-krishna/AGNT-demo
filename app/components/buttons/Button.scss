@@ -1,0 +1,24 @@
+@import './config.scss';
+
+.button {
+	height: auto;
+	padding: $buttonXPadding $buttonYPadding;
+	border: none;
+	text-transform: capitalize;
+	&.primary:not([disabled]).flat {
+		color: $buttonFontColor;
+		background: #00c6cc;
+	}
+
+	&.select {
+		padding: $buttonXPadding $selectButtonXPadding;
+		text-align: left;
+	}
+
+	&.flat {
+		border: 1px solid darken($buttonFontColor, 45%);
+		&.neutral:not([disabled]) {
+			color: $buttonFontColor;
+		}
+	}
+}
