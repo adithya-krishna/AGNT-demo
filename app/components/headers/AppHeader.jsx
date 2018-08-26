@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { themr } from 'react-css-themr';
 import { connect } from 'react-redux';
 import debounce from 'lodash/debounce';
+import isEmpty from 'lodash/isEmpty';
 import classnames from 'classnames';
 
 import { AppBar } from 'react-toolbox/lib/app_bar';
@@ -44,9 +45,14 @@ class AppHeader extends Component {
 		});
 	};
 
+	onClearClick = e => {
+		this.setState({ search: '' });
+	};
+
 	render() {
 		const { theme } = this.props;
 		const { search } = this.state;
+		const isSearchFilled = !isEmpty(search);
 		return (
 			<Fragment>
 				<AppBar
@@ -62,7 +68,9 @@ class AppHeader extends Component {
 						name={'search'}
 						placeholder={'Search'}
 						value={search}
+						clearable={isSearchFilled}
 						onFieldChange={this.onFieldChange}
+						onClearClick={this.onClearClick}
 					/>
 				</AppBar>
 				{/* <ScrollableHeader /> */}

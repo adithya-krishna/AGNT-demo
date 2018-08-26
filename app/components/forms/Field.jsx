@@ -1,9 +1,11 @@
 import React from 'react';
 import { themr } from 'react-css-themr';
 
-import defaultTheme from './field.scss';
+import { FontIcon } from 'react-toolbox/lib/font_icon';
 
-const withWrappedLabel = Component => {
+import defaultTheme from './Field.scss';
+
+const withIcon = Component => {
 	return ({
 		theme,
 		ref = null,
@@ -13,19 +15,14 @@ const withWrappedLabel = Component => {
 		value = '',
 		label,
 		onFieldChange,
+		onClearClick,
 		required,
+		clearable,
 		...others
 	}) => {
 		return (
 			<div className={theme.formGroup}>
-				{label ? (
-					<label htmlFor={id} className={theme.label}>
-						{label}
-						{required ? (
-							<span className={theme.required}>*</span>
-						) : null}
-					</label>
-				) : null}
+				<FontIcon value={'search'} />
 				<Component
 					ref={ref}
 					id={id}
@@ -36,6 +33,9 @@ const withWrappedLabel = Component => {
 					onChange={onFieldChange}
 					{...others}
 				/>
+				{clearable ? (
+					<FontIcon onClick={onClearClick} value={'clear'} />
+				) : null}
 			</div>
 		);
 	};
@@ -44,8 +44,8 @@ const withWrappedLabel = Component => {
 const Input = props => <input {...props} />;
 const TextArea = props => <textarea {...props} />;
 
-const InputField = withWrappedLabel(Input);
-const InputTextArea = withWrappedLabel(TextArea);
+const InputField = withIcon(Input);
+const InputTextArea = withIcon(TextArea);
 
 const ThemedInputField = themr('InputField', defaultTheme)(InputField);
 const ThemedInputTextArea = themr('InputTextArea', defaultTheme)(InputTextArea);
