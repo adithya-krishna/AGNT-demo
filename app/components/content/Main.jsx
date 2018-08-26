@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import debounce from 'lodash/debounce';
 import map from 'lodash/map';
 
-import { Input } from 'react-toolbox/lib/input';
-
 import ViewportContainer from 'components/content/ViewportContainer';
 import Card from 'components/content/Card';
 
@@ -22,26 +20,6 @@ const counter = () => {
 const generateIndex = counter();
 
 class Main extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			search: ''
-		};
-
-		this.seachAPI = debounce(this.seachAPI, 2000);
-	}
-
-	seachAPI = value => {
-		const { searchApi } = this.props;
-		searchApi(value, generateIndex());
-	};
-
-	onfieldChange = (value, e) => {
-		this.seachAPI(value);
-		this.setState({ search: value });
-	};
-
 	// we don't have to debouce on this.
 	// ref: https://stackoverflow.com/questions/9439725/javascript-how-to-detect-if-browser-window-is-scrolled-to-bottom
 	hasScrolledToBottom = () => {
@@ -61,10 +39,10 @@ class Main extends Component {
 	};
 
 	onScroll = e => {
-		const { search } = this.state;
+		const { searchApi, searchString } = this.props;
 		const windowBottomn = this.hasScrolledToBottom();
 		if (windowBottomn) {
-			this.seachAPI(search);
+			searchApi(searchString, generateIndex());
 		}
 	};
 
@@ -78,16 +56,9 @@ class Main extends Component {
 
 	render() {
 		const { theme, results } = this.props;
-		const { search } = this.state;
 
 		return (
 			<article className={theme.pageWrapper}>
-				<Input
-					type="text"
-					label="field"
-					value={search}
-					onChange={this.onfieldChange}
-				/>
 				<ViewportContainer theme={theme}>
 					{map(results, result => (
 						<Card
@@ -98,9 +69,9 @@ class Main extends Component {
 							raised
 							theme={theme}
 							title={result.user.name}
-							subtitle={result.user.bio}
+							subtitle={result.description}
 							image={result.urls.regular}
-							cardText={result.description}
+							cardText={result.user.bio}
 						/>
 					))}
 				</ViewportContainer>
@@ -112,7 +83,8 @@ class Main extends Component {
 const mapStateToProps = state => {
 	return state
 		? {
-				results: state.results
+				results: state.results,
+				search: state.search
 		  }
 		: {};
 };

@@ -1,3 +1,7 @@
+/**
+ *	HTTP Adapter
+ *	-	Forcing a singleton class.
+ */
 import axios from 'axios';
 import { BASE_URL, API_KEY } from 'constants/server';
 
@@ -5,13 +9,12 @@ const singleton = Symbol();
 const singletonEnforcer = Symbol();
 
 class HTTPAdapter {
-	constructor(enforcer, bearer) {
+	constructor(enforcer, bearer = 'Client-ID') {
 		if (enforcer !== singletonEnforcer) {
 			throw 'Cannot construct singleton use the instance method instead';
 		}
 
-		// this is not a good way to achieve this.
-		this.bearer = 'Client-ID';
+		this.bearer = bearer;
 	}
 
 	static get instance() {
@@ -42,6 +45,18 @@ class HTTPAdapter {
 		return axios({
 			baseURL: BASE_URL,
 			method: 'GET',
+			url,
+			headers: this.getHeaders()
+		});
+	}
+
+	set(url, bearer) {
+		if (bearer) {
+			this.bearer = this.setBearers(bearer);
+		}
+		return axios({
+			baseURL: BASE_URL,
+			method: 'POST',
 			url,
 			headers: this.getHeaders()
 		});

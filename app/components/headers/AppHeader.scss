@@ -1,5 +1,32 @@
 @import './config.scss';
+@import 'components/forms/config.scss';
+
+$rightIconHeight: 3.6 * $unit;
+$inputGroupMargin: (($baseHeaderHeight - $inputGroupHeight) / 2);
+$rightIconMargin: (($baseHeaderHeight - $rightIconHeight) / 2);
 
 .appBar {
 	height: $baseHeaderHeight;
+	.inner {
+		display: block;
+		lost-utility: clearfix;
+
+		.title {
+			@extend %removeMargin;
+			line-height: $baseHeaderHeight;
+			float: left;
+		}
+
+		.formGroup {
+			lost-column: 7/12;
+			lost-offset: 1/6;
+			@include margin($inputGroupMargin, null, $inputGroupMargin, null);
+		}
+
+		.rightIcon {
+			@include size($rightIconHeight);
+			@include margin($rightIconMargin, null, $rightIconMargin, null);
+			float: right;
+		}
+	}
 }

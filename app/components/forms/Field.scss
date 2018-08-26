@@ -1,0 +1,46 @@
+@import './config.scss';
+
+$appBarBGColor: black;
+$textColor: lighten($appBarBGColor, 70%);
+$backgroundColor: lighten($appBarBGColor, 25%);
+
+.formGroup {
+	.input {
+		display: block;
+		width: 100%;
+		height: $inputGroupHeight;
+		padding: $inputGroupXPadding $inputGroupYPadding;
+		border: none;
+		border-radius: 0.3 * $unit;
+		resize: none;
+		background-color: $backgroundColor;
+		caret-color: $textColor;
+		color: $textColor;
+
+		&:focus {
+			outline: none;
+		}
+
+		&::-webkit-input-placeholder {
+			color: $textColor;
+			font-size: 1.2 * $unit;
+		}
+
+		&::-ms-expand {
+			border: 0;
+			background-color: transparent;
+		}
+
+		&[disabled],
+		&[readonly],
+		fieldset[disabled] & {
+			background-color: #404040;
+			opacity: 1;
+		}
+	}
+
+	textarea.input {
+		height: auto;
+		line-height: 2 * $unit;
+	}
+}

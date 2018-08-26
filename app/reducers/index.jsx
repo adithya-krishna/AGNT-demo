@@ -1,5 +1,11 @@
 const reducer = (state = {}, action) => {
 	switch (action.type) {
+		case 'SEARCH_TEXT': {
+			return {
+				...state,
+				searchString: action.searchString
+			};
+		}
 		case 'SEARCH_COMPLETE': {
 			return {
 				...state,
@@ -10,6 +16,8 @@ const reducer = (state = {}, action) => {
 				]
 			};
 		}
+		default:
+			return state;
 	}
 };
 

@@ -1,0 +1,6 @@
+@import 'components/variables.scss';
+@import 'components/mixins.scss';
+
+$inputGroupHeight: 3.8 * $unit;
+$inputGroupXPadding: $inputGroupHeight / 6.333;
+$inputGroupYPadding: $inputGroupHeight / 3.167;

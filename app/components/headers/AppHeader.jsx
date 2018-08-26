@@ -1,11 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import { themr } from 'react-css-themr';
+import { connect } from 'react-redux';
+import debounce from 'lodash/debounce';
 import classnames from 'classnames';
 
 import { AppBar } from 'react-toolbox/lib/app_bar';
+import InputField from 'components/forms/Field';
 
 import defaultTheme from './AppHeader.scss';
 import ScrollableHeader from 'components/headers/ScrollableHeader';
+
+import SearchActions from 'actions/search';
 
 const GithubIcon = () => (
 	<svg viewBox="0 0 284 277">
@@ -16,8 +21,32 @@ const GithubIcon = () => (
 );
 
 class AppHeader extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = { search: '' };
+
+		this.searchApi = debounce(this.searchApi, 500);
+	}
+
+	searchApi = value => {
+		const { searchApi, setSearchString } = this.props;
+
+		setSearchString(value);
+		searchApi(value, 1);
+	};
+
+	onFieldChange = e => {
+		const { name, value } = e.target;
+
+		this.setState({ [name]: value }, () => {
+			this.searchApi(value);
+		});
+	};
+
 	render() {
 		const { theme } = this.props;
+		const { search } = this.state;
 		return (
 			<Fragment>
 				<AppBar
@@ -26,7 +55,16 @@ class AppHeader extends Component {
 					rightIcon={<GithubIcon />}
 					flat
 					fixed
-				/>
+				>
+					<InputField
+						theme={theme}
+						id={'search'}
+						name={'search'}
+						placeholder={'Search'}
+						value={search}
+						onFieldChange={this.onFieldChange}
+					/>
+				</AppBar>
 				{/* <ScrollableHeader /> */}
 			</Fragment>
 		);
@@ -34,4 +72,10 @@ class AppHeader extends Component {
 }
 
 const ThemedAppHeader = themr('AppHeader', defaultTheme)(AppHeader);
-export default ThemedAppHeader;
+export default connect(
+	null,
+	{
+		searchApi: SearchActions.searchApi,
+		setSearchString: SearchActions.setSearchString
+	}
+)(ThemedAppHeader);
