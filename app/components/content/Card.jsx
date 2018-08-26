@@ -49,6 +49,9 @@ class Card extends Component {
 			title,
 			subtitle,
 			cardText,
+			avatar,
+			user,
+			userSubtitle,
 			...others
 		} = this.props;
 
@@ -56,6 +59,11 @@ class Card extends Component {
 
 		return (
 			<RTCard {...others} theme={theme}>
+				<RTCardTitle
+					avatar={avatar}
+					title={user}
+					subtitle={userSubtitle}
+				/>
 				<RTCardMedia
 					contentOverlay
 					theme={theme}
