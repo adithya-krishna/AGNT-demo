@@ -55,6 +55,9 @@ $iconMargin: 1 * $unit;
 			right: $inputGroupXPadding + $fontIconSize;
 			top: 0;
 			cursor: pointer;
+			&:hover {
+				color: lighten($textColor, 10%);
+			}
 		}
 	}
 

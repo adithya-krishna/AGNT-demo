@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { themr } from 'react-css-themr';
 import { connect } from 'react-redux';
-import debounce from 'lodash/debounce';
+import isEmpty from 'lodash/isEmpty';
 import map from 'lodash/map';
 
 import ViewportContainer from 'components/content/ViewportContainer';
@@ -40,8 +40,8 @@ class Main extends Component {
 
 	onScroll = e => {
 		const { searchApi, searchString } = this.props;
-		const windowBottomn = this.hasScrolledToBottom();
-		if (windowBottomn) {
+		const windowBottom = this.hasScrolledToBottom();
+		if (windowBottom & !isEmpty(searchString)) {
 			searchApi(searchString, generateIndex());
 		}
 	};
@@ -60,6 +60,22 @@ class Main extends Component {
 		return (
 			<article className={theme.pageWrapper}>
 				<ViewportContainer theme={theme}>
+					{/* <Card
+						avatar={
+							'https://images.unsplash.com/profile-1529543914107-73e38dcb3c9e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=8fcc46d1696a67f91046e46d2d1613cc'
+						}
+						user={'Ricardo Mancía'}
+						userSubtitle={'ricardomancia_'}
+						raised
+						theme={theme}
+						subtitle={
+							'If you use my photographs, give the respective credits.'
+						}
+						image={
+							'https://images.unsplash.com/profile-1529543914107-73e38dcb3c9e'
+						}
+					/> */}
+
 					{map(results, result => (
 						<Card
 							avatar={result.user.profile_image.small}
@@ -68,9 +84,11 @@ class Main extends Component {
 							key={`check-${result.id}`}
 							raised
 							theme={theme}
-							title={result.user.name}
-							subtitle={result.description}
 							image={result.urls.regular}
+							filename={`${result.id}-${Date.now()}`}
+							fullImage={result.urls.full}
+							likes={result.likes}
+							portfolioUrl={result.user.portfolio_url}
 							cardText={result.user.bio}
 						/>
 					))}

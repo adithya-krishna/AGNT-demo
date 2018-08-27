@@ -2,6 +2,9 @@ import React, { Component, Fragment } from 'react';
 import { themr } from 'react-css-themr';
 import cn from 'classnames';
 
+import { IconButton } from 'react-toolbox/lib/button';
+import Tooltip from 'react-toolbox/lib/tooltip';
+
 import {
 	Card as RTCard,
 	CardMedia as RTCardMedia,
@@ -9,8 +12,7 @@ import {
 	CardText as RTCardText
 } from 'react-toolbox/lib/card';
 
-// import Button from 'components/buttons/Button';
-// import ViewportContainer from 'components/content/ViewportContainer';
+const TooltipIconButton = Tooltip(IconButton);
 
 import defaultTheme from './Card.scss';
 
@@ -46,12 +48,13 @@ class Card extends Component {
 			theme,
 			aspectRatio = 'square',
 			image,
-			title,
-			subtitle,
+			portfolioUrl,
 			cardText,
 			avatar,
 			user,
 			userSubtitle,
+			fullImage,
+			likes,
 			...others
 		} = this.props;
 
@@ -59,11 +62,6 @@ class Card extends Component {
 
 		return (
 			<RTCard {...others} theme={theme}>
-				<RTCardTitle
-					avatar={avatar}
-					title={user}
-					subtitle={userSubtitle}
-				/>
 				<RTCardMedia
 					contentOverlay
 					theme={theme}
@@ -71,19 +69,46 @@ class Card extends Component {
 					aspectRatio={aspectRatio}
 					image={imageURL}
 					children={
-						<RTCardTitle
-							theme={theme}
-							className={cn({ [theme.isLoading]: isLoading })}
-							title={title}
-							subtitle={subtitle}
-						/>
+						isLoading ? null : (
+							<RTCardTitle
+								theme={theme}
+								className={cn({ [theme.isLoading]: isLoading })}
+								avatar={avatar}
+								title={user}
+								subtitle={userSubtitle}
+							/>
+						)
 					}
 				/>
 				<RTCardText
 					theme={theme}
 					className={cn({ [theme.isLoading]: isLoading })}
 				>
-					{cardText}
+					<TooltipIconButton
+						theme={theme}
+						tooltipPosition={'top'}
+						tooltip={`${likes} Likes`}
+						tooltipDelay={300}
+						icon={'thumb_up_alt'}
+					/>
+					<TooltipIconButton
+						theme={theme}
+						href={portfolioUrl}
+						tooltipPosition={'top'}
+						target={'_blank'}
+						icon={'local_see'}
+						tooltip={`View user's portfolio page`}
+						tooltipDelay={300}
+					/>
+					<TooltipIconButton
+						theme={theme}
+						tooltipPosition={'top'}
+						className={theme.saveButton}
+						href={fullImage}
+						icon={'aspect_ratio'}
+						tooltip={'View full image'}
+						tooltipDelay={300}
+					/>
 				</RTCardText>
 			</RTCard>
 		);
