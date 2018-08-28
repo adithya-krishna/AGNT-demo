@@ -1,9 +1,12 @@
 import Adapter from 'server/Adapter';
 
-class Search {
+class SearchActions {
+	static SEARCH_COMPLETE = 'SEARCH_COMPLETE';
+	static SEARCH_TEXT = 'SEARCH_TEXT';
+
 	static setSearchString = query => {
 		return {
-			type: 'SEARCH_TEXT',
+			type: SearchActions.SEARCH_TEXT,
 			searchString: query
 		};
 	};
@@ -14,11 +17,11 @@ class Search {
 			const payload = check.data;
 
 			dispatch({
-				type: 'SEARCH_COMPLETE',
+				type: SearchActions.SEARCH_COMPLETE,
 				payload
 			});
 		};
 	};
 }
 
-export default Search;
+export default SearchActions;

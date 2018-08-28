@@ -101,9 +101,7 @@ class Main extends Component {
 
 const mapStateToProps = state => {
 	return {
-		images: getAllImages(state),
-		pages: state.totalPages,
-		totalImages: state.totalResults
+		images: getAllImages(state)
 	};
 };
 
