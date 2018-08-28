@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 
+import SearchActions from 'actions/search';
+
 const totalPages = (state = 0, action) => {
 	switch (action.type) {
-		case 'SEARCH_COMPLETE': {
+		case SearchActions.SEARCH_COMPLETE: {
 			return action.payload.total_pages;
 		}
 		default:
@@ -12,7 +14,7 @@ const totalPages = (state = 0, action) => {
 
 const totalResults = (state = 0, action) => {
 	switch (action.type) {
-		case 'SEARCH_COMPLETE': {
+		case SearchActions.SEARCH_COMPLETE: {
 			return action.payload.total;
 		}
 		default:

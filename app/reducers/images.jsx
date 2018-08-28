@@ -1,6 +1,8 @@
 import map from 'lodash/map';
 import reduce from 'lodash/reduce';
 
+import SearchActions from 'actions/search';
+
 import moment from 'moment';
 
 const modifyAndNormalizeResult = (inputArray, reduceBy = 'id') => {
@@ -22,7 +24,7 @@ const modifyAndNormalizeResult = (inputArray, reduceBy = 'id') => {
 
 const images = (state = {}, action) => {
 	switch (action.type) {
-		case 'SEARCH_COMPLETE': {
+		case SearchActions.SEARCH_COMPLETE: {
 			const { results } = action.payload;
 			const normalizedResults = modifyAndNormalizeResult(results);
 			return {

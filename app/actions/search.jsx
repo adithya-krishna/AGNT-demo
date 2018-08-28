@@ -4,12 +4,11 @@ class SearchActions {
 	static SEARCH_COMPLETE = 'SEARCH_COMPLETE';
 	static SEARCH_TEXT = 'SEARCH_TEXT';
 
-	static setSearchString = query => {
-		return {
-			type: SearchActions.SEARCH_TEXT,
-			searchString: query
-		};
-	};
+	static setSearchString = query => ({
+		type: SearchActions.SEARCH_TEXT,
+		searchText: query
+	});
+
 	static searchApi = (query, page = 1) => {
 		return async dispatch => {
 			const base = `search/photos?page=${page}&query=${query}`;

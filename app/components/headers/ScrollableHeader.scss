@@ -26,33 +26,5 @@ $textColor: lighten(black, 26%);
 			color: $textColor;
 			padding: $menuButtonYPadding $menuButtonXPadding;
 		}
-
-		.menuButton {
-			position: relative;
-
-			&:last-child {
-				.button.flat {
-					border-left: 1px solid lighten(black, 80%);
-					border-right: 1px solid lighten(black, 80%);
-				}
-			}
-
-			.button.flat {
-				border-radius: 0;
-				border: none;
-				border-left: 1px solid lighten(black, 80%);
-				font-size: 1.2 * $unit;
-				padding: $menuButtonYPadding $menuButtonXPadding;
-				span {
-					margin-left: 0.6 * $unit;
-					line-height: $filterHeight;
-					font-size: 1.6 * $unit;
-				}
-				&.neutral:not([disabled]) {
-					color: $textColor;
-					height: $filterHeight;
-				}
-			}
-		}
 	}
 }

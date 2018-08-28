@@ -13,7 +13,7 @@ import { getAllImages } from 'reducers';
 import defaultTheme from './Main.scss';
 
 const counter = () => {
-	var index = 1;
+	var index = 2;
 	return () => {
 		return index++;
 	};
@@ -40,10 +40,10 @@ class Main extends Component {
 	};
 
 	onScroll = e => {
-		const { searchApi, searchString } = this.props;
+		const { searchApi, searchText } = this.props;
 		const windowBottom = this.hasScrolledToBottom();
-		if (windowBottom & !isEmpty(searchString)) {
-			searchApi(searchString, generateIndex());
+		if (windowBottom & !isEmpty(searchText)) {
+			searchApi(searchText, generateIndex());
 		}
 	};
 
@@ -101,7 +101,8 @@ class Main extends Component {
 
 const mapStateToProps = state => {
 	return {
-		images: getAllImages(state)
+		images: getAllImages(state),
+		searchText: state.searchText
 	};
 };
 

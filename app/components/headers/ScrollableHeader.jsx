@@ -1,17 +1,21 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
 import { themr } from 'react-css-themr';
 import classnames from 'classnames';
+import startCase from 'lodash/startCase';
+import map from 'lodash/map';
 
 import { AppBar } from 'react-toolbox/lib/app_bar';
-import MenuButton from 'components/buttons/MenuButton';
-import { MenuItem, MenuDivider } from 'react-toolbox/lib/menu';
-import { FontIcon } from 'react-toolbox/lib/font_icon';
+
+import FilterMenu from 'components/content/FilterMenu';
 
 import defaultTheme from './ScrollableHeader.scss';
 
 class ScrollableHeader extends Component {
 	render() {
-		const { theme } = this.props;
+		const { theme, filters } = this.props;
+		const yearMenuItems = map(filters.years, year => year.get('year'));
+		const tagMenuItems = map(filters.tags, tag => startCase(tag));
 		return (
 			<Fragment>
 				<AppBar
@@ -20,39 +24,22 @@ class ScrollableHeader extends Component {
 					fixed
 				>
 					<span className={theme.filterLabel}>Filters:</span>
-					<MenuButton
-						label={'Year'}
-						rightIcon={<FontIcon value={'keyboard_arrow_down'} />}
-						position="topLeft"
-						menuRipple
-						theme={theme}
-					>
-						<MenuItem
-							value="download"
-							icon="get_app"
-							caption="Download"
-						/>
-					</MenuButton>
-					<MenuButton
-						label={'Tags'}
-						rightIcon={<FontIcon value={'keyboard_arrow_down'} />}
-						position="topLeft"
-						menuRipple
-						theme={theme}
-					>
-						<MenuItem
-							value="download"
-							icon="get_app"
-							caption="Download"
-						/>
-					</MenuButton>
+
+					<FilterMenu label={'Years'} menuItems={yearMenuItems} />
+					<FilterMenu label={'Tags'} menuItems={tagMenuItems} />
 				</AppBar>
 			</Fragment>
 		);
 	}
 }
 
+const mapStateToProps = state => {
+	return {
+		filters: state.filters
+	};
+};
+
 const ThemedScrollableHeader = themr('ScrollableHeader', defaultTheme)(
 	ScrollableHeader
 );
-export default ThemedScrollableHeader;
+export default connect(mapStateToProps)(ThemedScrollableHeader);

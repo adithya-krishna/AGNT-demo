@@ -6,6 +6,7 @@ import images from './images';
 import pages from './pages';
 import lists from './lists';
 import filters from './filters';
+import searchText from './searchText';
 import * as helpers from './_helpers';
 
 //selectors
@@ -16,6 +17,7 @@ const combinedImages = combineReducers({
 	images,
 	pages,
 	lists,
+	searchText,
 	filters
 });
 
