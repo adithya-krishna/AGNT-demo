@@ -8,6 +8,7 @@ import ViewportContainer from 'components/content/ViewportContainer';
 import Card from 'components/content/Card';
 
 import SearchActions from 'actions/search';
+import { getAllImages } from 'reducers';
 
 import defaultTheme from './Main.scss';
 
@@ -55,7 +56,7 @@ class Main extends Component {
 	};
 
 	render() {
-		const { theme, results } = this.props;
+		const { theme, images } = this.props;
 
 		return (
 			<article className={theme.pageWrapper}>
@@ -76,20 +77,20 @@ class Main extends Component {
 						}
 					/> */}
 
-					{map(results, result => (
+					{map(images, image => (
 						<Card
-							avatar={result.user.profile_image.small}
-							user={result.user.name}
-							userSubtitle={result.user.instagram_username}
-							key={`check-${result.id}`}
+							avatar={image.user.profile_image.small}
+							user={image.user.name}
+							userSubtitle={image.user.instagram_username}
+							key={`check-${image.id}`}
 							raised
 							theme={theme}
-							image={result.urls.regular}
-							filename={`${result.id}-${Date.now()}`}
-							fullImage={result.urls.full}
-							likes={result.likes}
-							portfolioUrl={result.user.portfolio_url}
-							cardText={result.user.bio}
+							image={image.urls.regular}
+							filename={`${image.id}-${Date.now()}`}
+							fullImage={image.urls.full}
+							likes={image.likes}
+							portfolioUrl={image.user.portfolio_url}
+							cardText={image.user.bio}
 						/>
 					))}
 				</ViewportContainer>
@@ -99,12 +100,11 @@ class Main extends Component {
 }
 
 const mapStateToProps = state => {
-	return state
-		? {
-				results: state.results,
-				search: state.search
-		  }
-		: {};
+	return {
+		images: getAllImages(state),
+		pages: state.totalPages,
+		totalImages: state.totalResults
+	};
 };
 
 const ThemedMain = themr('Main', defaultTheme)(Main);

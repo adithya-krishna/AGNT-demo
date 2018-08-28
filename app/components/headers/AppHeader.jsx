@@ -65,7 +65,7 @@ class AppHeader extends Component {
 						onClearClick={this.onClearClick}
 					/>
 				</AppBar>
-				{/* <ScrollableHeader /> */}
+				<ScrollableHeader />
 			</Fragment>
 		);
 	}
