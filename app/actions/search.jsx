@@ -14,14 +14,9 @@ class SearchActions {
 		type: SearchActions.CLEAR_IMAGES
 	});
 
-	static searchApi = (
-		query,
-		page = 1,
-		perPage = 12,
-		orientation = 'squarish'
-	) => {
+	static searchApi = (query, page = 1, perPage = 12) => {
 		return async dispatch => {
-			const base = `search/photos?per_page=${perPage}&page=${page}&query=${query}&orientation=${orientation}`;
+			const base = `search/photos?per_page=${perPage}&page=${page}&query=${query}`;
 			const check = await Adapter.get(base);
 			const payload = check.data;
 
