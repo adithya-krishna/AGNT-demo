@@ -61,22 +61,6 @@ class Main extends Component {
 		return (
 			<article className={theme.pageWrapper}>
 				<ViewportContainer theme={theme}>
-					{/* <Card
-						avatar={
-							'https://images.unsplash.com/profile-1529543914107-73e38dcb3c9e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=8fcc46d1696a67f91046e46d2d1613cc'
-						}
-						user={'Ricardo Mancía'}
-						userSubtitle={'ricardomancia_'}
-						raised
-						theme={theme}
-						subtitle={
-							'If you use my photographs, give the respective credits.'
-						}
-						image={
-							'https://images.unsplash.com/profile-1529543914107-73e38dcb3c9e'
-						}
-					/> */}
-
 					{map(images, (image, index) => (
 						<Card
 							avatar={image.user.profile_image.small}

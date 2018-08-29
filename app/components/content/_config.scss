@@ -8,3 +8,5 @@ $filterHeight: (($baseHeaderHeight * 1.5) / $goldenRatio) * 0.8;
 $textColor: lighten(black, 26%);
 $menuButtonXPadding: 3 * $unit;
 $menuButtonYPadding: 0;
+$menuMaxHeight: 30 * $unit;
+$menuWidth: 24 * $unit;

@@ -26,4 +26,14 @@
 			height: $filterHeight;
 		}
 	}
+
+	.menu {
+		.menuInner {
+			max-height: $menuMaxHeight;
+			overflow-y: auto;
+			.menuItem {
+				width: $menuWidth;
+			}
+		}
+	}
 }
