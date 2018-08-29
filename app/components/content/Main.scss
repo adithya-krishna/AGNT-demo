@@ -12,7 +12,12 @@
 		height: $pageWrapperHeight;
 	}
 
-	@include padding($baseHeaderHeight + 10, null, $baseHeaderHeight, null);
+	@include padding(
+		($baseHeaderHeight + $filterHeight + 10),
+		null,
+		$baseHeaderHeight,
+		null
+	);
 
 	.container {
 		.card {

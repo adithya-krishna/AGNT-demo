@@ -26,6 +26,14 @@ const FilterMenu = ({
 			menuRipple
 			theme={theme}
 		>
+			<MenuItem
+				theme={theme}
+				key={`showAll-neg1`}
+				section={''}
+				value={'show_all'}
+				caption={'Show All'}
+				onClick={onFilterItemClick}
+			/>
 			{map(menuItems, (menuItem, index) => {
 				const value = isNumeric(menuItem)
 					? menuItem
