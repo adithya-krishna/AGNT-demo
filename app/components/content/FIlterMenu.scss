@@ -36,4 +36,10 @@
 			}
 		}
 	}
+
+	@include media('>phone', '<=#{$baseScreenWidth}') {
+		.button.flat {
+			padding: $phoneMenuButtonYPadding $phoneMenuButtonXPadding;
+		}
+	}
 }

@@ -11,6 +11,37 @@
 		.filterLabel {
 			color: $textColor;
 			padding: $menuButtonYPadding $menuButtonXPadding;
+
+			@include media('>phone', '<=#{$baseScreenWidth}') {
+				font-size: 1.2 * $unit;
+				padding: $phoneMenuButtonYPadding $phoneMenuButtonXPadding;
+			}
+		}
+
+		.sortSection {
+			display: flex;
+			flex-grow: 1;
+			justify-content: flex-end;
+			align-items: center;
+
+			.field {
+				margin-bottom: 0;
+				.on {
+					background: lighten(black, 25%);
+				}
+				.off {
+					background: lighten(black, 50%);
+				}
+
+				@include media('>phone', '<=#{$baseScreenWidth}') {
+					.input {
+						margin: 0;
+					}
+					.text {
+						font-size: 1.2 * $unit;
+					}
+				}
+			}
 		}
 	}
 }
