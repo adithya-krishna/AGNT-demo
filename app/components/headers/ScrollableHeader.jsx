@@ -31,11 +31,14 @@ class ScrollableHeader extends Component {
 				>
 					<span className={theme.filterLabel}>Filters:</span>
 					<FilterMenu
+						theme={theme}
 						label={'Years'}
 						menuItems={yearMenuItems}
 						onFilterItemClick={onFilterItemClick}
 					/>
 					<FilterMenu
+						theme={theme}
+						isLast
 						label={'Tags'}
 						menuItems={tagMenuItems}
 						onFilterItemClick={onFilterItemClick}

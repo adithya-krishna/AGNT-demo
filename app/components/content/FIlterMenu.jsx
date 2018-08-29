@@ -1,5 +1,6 @@
 import React from 'react';
 import { themr } from 'react-css-themr';
+import cn from 'classnames';
 import MenuButton from 'components/buttons/MenuButton';
 import { MenuItem } from 'react-toolbox/lib/menu';
 import { FontIcon } from 'react-toolbox/lib/font_icon';
@@ -16,10 +17,12 @@ const FilterMenu = ({
 	position = 'topLeft',
 	theme,
 	onFilterItemClick,
-	menuItems = []
+	menuItems = [],
+	isLast
 }) => {
 	return (
 		<MenuButton
+			className={cn({ [theme.last]: isLast })}
 			label={label}
 			rightIcon={rightIcon}
 			position={position}

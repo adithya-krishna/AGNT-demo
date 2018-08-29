@@ -3,13 +3,6 @@
 .menuButton {
 	position: relative;
 
-	&:last-child {
-		.button.flat {
-			border-left: 1px solid lighten(black, 80%);
-			border-right: 1px solid lighten(black, 80%);
-		}
-	}
-
 	.button.flat {
 		border-radius: 0;
 		border: none;
@@ -24,6 +17,13 @@
 		&.neutral:not([disabled]) {
 			color: $textColor;
 			height: $filterHeight;
+		}
+	}
+
+	&.last {
+		.button.flat {
+			border-left: 1px solid lighten(black, 80%);
+			border-right: 1px solid lighten(black, 80%);
 		}
 	}
 

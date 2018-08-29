@@ -9,9 +9,9 @@ class SearchActions {
 		searchText: query
 	});
 
-	static searchApi = (query, page = 1) => {
+	static searchApi = (query, page = 1, perPage = 12) => {
 		return async dispatch => {
-			const base = `search/photos?page=${page}&query=${query}`;
+			const base = `search/photos?per_page=${perPage}page=${page}&query=${query}`;
 			const check = await Adapter.get(base);
 			const payload = check.data;
 
