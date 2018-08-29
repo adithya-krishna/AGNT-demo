@@ -63,14 +63,13 @@ class Main extends Component {
 				<ViewportContainer theme={theme}>
 					{map(images, (image, index) => (
 						<Card
+							theme={theme}
+							raised
 							avatar={image.user.profile_image.small}
 							user={image.user.name}
 							userSubtitle={image.user.instagram_username}
 							key={`${image.id}-${index}`}
-							raised
-							theme={theme}
 							image={image.urls.regular}
-							filename={`${image.id}-${Date.now()}`}
 							fullImage={image.urls.full}
 							likes={image.likes}
 							portfolioUrl={image.user.portfolio_url}
