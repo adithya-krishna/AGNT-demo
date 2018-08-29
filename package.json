@@ -4,7 +4,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "webpack-dev-server --mode development --hot --progress --profile --colors"
+		"start": "webpack-dev-server --mode development --hot --progress --profile --colors --host 0.0.0.0"
 	},
 	"keywords": [],
 	"author": " <Adithya Krishna> adithya.krishna.shyam@gmail.com",

@@ -4,3 +4,7 @@
 
 $pageWrapperHeight: $stickyFooterRatio * $unit;
 $cardBorderRadius: 0.4 * $unit;
+$filterHeight: (($baseHeaderHeight * 1.5) / $goldenRatio) * 0.8;
+$textColor: lighten(black, 26%);
+$menuButtonXPadding: 3 * $unit;
+$menuButtonYPadding: 0;

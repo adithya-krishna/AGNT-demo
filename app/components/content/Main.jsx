@@ -77,12 +77,12 @@ class Main extends Component {
 						}
 					/> */}
 
-					{map(images, image => (
+					{map(images, (image, index) => (
 						<Card
 							avatar={image.user.profile_image.small}
 							user={image.user.name}
 							userSubtitle={image.user.instagram_username}
-							key={`check-${image.id}`}
+							key={`${image.id}-${index}`}
 							raised
 							theme={theme}
 							image={image.urls.regular}

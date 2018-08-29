@@ -7,7 +7,6 @@ import pages from './pages';
 import lists from './lists';
 import filters from './filters';
 import searchText from './searchText';
-import * as helpers from './_helpers';
 
 //selectors
 export const getAllImages = state =>

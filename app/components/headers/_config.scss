@@ -1,3 +1,12 @@
 @import 'components/variables.scss';
 @import 'components/mixins.scss';
 @import 'components/helpers.scss';
+@import 'components/forms/config.scss';
+@import 'components/content/config.scss';
+
+$rightIconHeight: 3.6 * $unit;
+$inputGroupMargin: (($baseHeaderHeight - $inputGroupHeight) / 2);
+$rightIconMargin: (($baseHeaderHeight - $rightIconHeight) / 2);
+$bannerHeight: ($baseHeaderHeight * 5) / $goldenRatio;
+$filterHeight: (($baseHeaderHeight * 1.5) / $goldenRatio) * 0.8;
+$textColor: lighten(black, 26%);

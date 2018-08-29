@@ -1,20 +1,6 @@
 @import './config.scss';
-$bannerHeight: ($baseHeaderHeight * 5) / $goldenRatio;
-$filterHeight: (($baseHeaderHeight * 1.5) / $goldenRatio) * 0.8;
-$menuButtonXPadding: 3 * $unit;
-$menuButtonYPadding: 0;
-$textColor: lighten(black, 26%);
 
 .appBar {
-	&.banner {
-		background: grey;
-		height: $bannerHeight;
-		&.fixed {
-			top: $baseHeaderHeight;
-			z-index: 99;
-		}
-	}
-
 	&.filter {
 		background-color: white;
 		&.fixed {

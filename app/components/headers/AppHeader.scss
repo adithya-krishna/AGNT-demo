@@ -1,9 +1,4 @@
 @import './config.scss';
-@import 'components/forms/config.scss';
-
-$rightIconHeight: 3.6 * $unit;
-$inputGroupMargin: (($baseHeaderHeight - $inputGroupHeight) / 2);
-$rightIconMargin: (($baseHeaderHeight - $rightIconHeight) / 2);
 
 .appBar {
 	height: $baseHeaderHeight;
