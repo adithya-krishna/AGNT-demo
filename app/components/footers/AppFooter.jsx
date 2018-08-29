@@ -18,8 +18,8 @@ import ViewportContainer from 'components/content/ViewportContainer';
 
 const Copyright = ({ theme }) => (
 	<div className={theme.copyright}>
-		<h1>AGNT</h1>
-		<h4>&copy; 2018 AGNT inc.</h4>
+		<h1 className={theme.title}>AGNT</h1>
+		<h4 className={theme.subtitle}>&copy; 2018 AGNT inc.</h4>
 	</div>
 );
 
@@ -29,7 +29,7 @@ class AppFooter extends Component {
 		return (
 			<footer className={theme.footerWrapper}>
 				<ViewportContainer theme={theme}>
-					<section className={theme.section}>
+					<footer className={cn(theme.section, theme.footerTop)}>
 						<div className={theme.left}>
 							<Button label="English" theme={theme} select flat />
 							<Button
@@ -69,9 +69,9 @@ class AppFooter extends Component {
 								links={['Blog', 'About AGNT', 'Press', 'Help']}
 							/>
 						</div>
-					</section>
+					</footer>
 					<Divider theme={theme} />
-					<section className={cn(theme.section, theme.footerBase)}>
+					<footer className={cn(theme.section, theme.footerBase)}>
 						<div className={theme.left}>
 							<Copyright theme={theme} />
 						</div>
@@ -98,7 +98,7 @@ class AppFooter extends Component {
 								Available on the app store
 							</Button>
 						</div>
-					</section>
+					</footer>
 				</ViewportContainer>
 			</footer>
 		);

@@ -12,3 +12,15 @@ $footerLinksYPadding: 3.04 * $unit;
 $appStoreButtonYPadding: 0.4 * $unit;
 $appStoreButtonXPadding: 1 * $unit;
 $appStoreButtonYMargins: 1.4 * $unit;
+$fontSizeFraction: 1.4;
+$fontSize: $fontSizeFraction * $unit;
+$iconSize: 2.4 * $unit;
+$iconLinkMargin: ($footerBaseHeight - $iconSize) / 2;
+$minButtonWidth: 20 * $unit;
+
+// phone screens
+$phoneStickyFooterHeight: $phoneStickyFooterRatio * $unit;
+$phoneBaseHeight: $footerBaseHeight / 2;
+$phoneLineHeight: $phoneBaseHeight;
+$phoneAppStoreButtonYMargins: 0;
+$phoneIconLinkMargin: ($phoneBaseHeight - $iconSize) / 2;

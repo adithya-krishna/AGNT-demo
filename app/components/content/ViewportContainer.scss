@@ -2,5 +2,11 @@
 
 .container {
 	lost-utility: clearfix;
+	position: relative;
+	@include size(100%, 100%);
 	@include centerBlock($baseScreenWidth);
+
+	@include media('>phone', '<=#{$baseScreenWidth}') {
+		width: 100%;
+	}
 }
