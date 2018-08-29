@@ -16,8 +16,13 @@
 
 	.container {
 		.card {
-			lost-column: 1/4;
-			margin-bottom: 3 * $unit;
+			@include centerBlock(90%);
+			margin-bottom: lost-vars('gutter');
+
+			@include media('>tablet') {
+				lost-column: 1/4;
+				margin-bottom: lost-vars('gutter');
+			}
 		}
 	}
 }

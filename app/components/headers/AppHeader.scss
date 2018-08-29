@@ -13,9 +13,15 @@
 		}
 
 		.formGroup {
-			lost-column: 7/12;
+			width: 60%;
+			float: left;
 			lost-offset: 1/6;
 			@include margin($inputGroupMargin, null, $inputGroupMargin, null);
+
+			@include media('>phone', '<=#{$baseScreenWidth}') {
+				width: auto;
+				margin-left: lost-vars('gutter') !important;
+			}
 		}
 
 		.rightIcon {
