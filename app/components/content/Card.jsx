@@ -1,10 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { themr } from 'react-css-themr';
 import cn from 'classnames';
 
 import { IconButton } from 'react-toolbox/lib/button';
 import Tooltip from 'react-toolbox/lib/tooltip';
-
 import {
 	Card as RTCard,
 	CardMedia as RTCardMedia,

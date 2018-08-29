@@ -1,3 +1,7 @@
+/**
+ *	Reducer: RootReducer
+ *	-	combines all reducers to feed into the store.
+ */
 import map from 'lodash/map';
 import moment from 'moment';
 

@@ -5,6 +5,7 @@ import debounce from 'lodash/debounce';
 import isEmpty from 'lodash/isEmpty';
 
 import { AppBar } from 'react-toolbox/lib/app_bar';
+
 import InputField from 'components/forms/Field';
 import defaultTheme from './AppHeader.scss';
 import ScrollableHeader from 'components/headers/ScrollableHeader';

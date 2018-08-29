@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import { themr } from 'react-css-themr';
 import cn from 'classnames';
 

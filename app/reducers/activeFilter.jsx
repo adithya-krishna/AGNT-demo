@@ -1,3 +1,7 @@
+/**
+ *	Reducer: activeFilters
+ *
+ */
 import { combineReducers } from 'redux';
 
 import FilterActions from 'actions/filter';

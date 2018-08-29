@@ -16,6 +16,8 @@ import {
 } from 'components/assets/SVGIcons';
 import ViewportContainer from 'components/content/ViewportContainer';
 
+/*----------  Components are only used within this component, so we declare it here.  ----------*/
+/*----------  Move to separate file if used elsewhere.  ----------*/
 const Copyright = ({ theme }) => (
 	<div className={theme.copyright}>
 		<h1 className={theme.title}>AGNT</h1>

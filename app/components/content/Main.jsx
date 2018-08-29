@@ -13,7 +13,7 @@ import { getAllImages } from 'reducers';
 import defaultTheme from './Main.scss';
 
 const counter = () => {
-	var index = 2;
+	var index = 2; // start from page 2
 	return () => {
 		return index++;
 	};

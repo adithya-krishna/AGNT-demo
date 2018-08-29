@@ -1,3 +1,8 @@
+/**
+ *	Action Creator: SearchActions
+ *	-	All Action Creators within the app have this signature.
+		This helps in localising Code.
+ */
 import Adapter from 'server/Adapter';
 
 class SearchActions {
