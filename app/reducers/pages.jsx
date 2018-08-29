@@ -1,3 +1,6 @@
+/**
+ *	Reducer: pages
+ */
 import { combineReducers } from 'redux';
 
 import SearchActions from 'actions/search';

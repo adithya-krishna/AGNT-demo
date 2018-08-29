@@ -1,3 +1,6 @@
+/**
+ *	Reducer: filters
+ */
 import uniq from 'lodash/uniq';
 import * as helpers from './_helpers';
 import { combineReducers } from 'redux';

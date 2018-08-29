@@ -1,6 +1,12 @@
 /**
  *	Reducer: RootReducer
  *	-	combines all reducers to feed into the store.
+		we can use combine reducers in multiple places.
+		in this app, this I have chosen to separate
+		reducers and implemented combine reducers in each.
+	-	Such separation is not required. But i have done so
+		just as a POC.
+	-	The State tree is normalized.
  */
 import map from 'lodash/map';
 import moment from 'moment';

@@ -1,3 +1,8 @@
+/**
+ *	Reducer: sortByYear
+	-	I have not created lists for sorting.
+		This can be done if required.
+ */
 import SortActions from 'actions/sort';
 
 const sortByYears = (state = false, action) => {

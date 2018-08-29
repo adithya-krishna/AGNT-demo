@@ -1,3 +1,8 @@
+/**
+ *	Reducer: lists
+ *	-	The State tree is normalized.
+	-	Creating List ids to perform local filtering.
+ */
 import map from 'lodash/map';
 import filter from 'lodash/filter';
 import forEach from 'lodash/forEach';

@@ -1,3 +1,6 @@
+/**
+ *	Reducer: images
+ */
 import map from 'lodash/map';
 import reduce from 'lodash/reduce';
 

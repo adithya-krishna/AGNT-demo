@@ -1,6 +1,5 @@
 /**
  *	Reducer: activeFilters
- *
  */
 import { combineReducers } from 'redux';
 

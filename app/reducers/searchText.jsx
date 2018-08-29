@@ -1,3 +1,6 @@
+/**
+ *	Reducer: searchText
+ */
 import SearchActions from 'actions/search';
 
 const searchText = (state = '', action) => {
