@@ -17,6 +17,9 @@ const allImages = (state = [], action) => {
 			const currentIds = map(action.payload.results, result => result.id);
 			return [...state, ...currentIds];
 		}
+		case SearchActions.CLEAR_IMAGES: {
+			return [];
+		}
 		default:
 			return state;
 	}
@@ -44,6 +47,9 @@ const byYears = (state = {}, action) => {
 				};
 			});
 			return { ...state, ...byYear };
+		}
+		case SearchActions.CLEAR_IMAGES: {
+			return [];
 		}
 		default:
 			return state;
@@ -76,6 +82,9 @@ const byTags = (state = [], action) => {
 				};
 			});
 			return { ...state, ...byTags };
+		}
+		case SearchActions.CLEAR_IMAGES: {
+			return [];
 		}
 		default:
 			return state;

@@ -15,6 +15,9 @@ const years = (state = [], action) => {
 			]);
 			return nextState;
 		}
+		case SearchActions.CLEAR_IMAGES: {
+			return [];
+		}
 		default:
 			return state;
 	}
@@ -27,6 +30,9 @@ const tags = (state = [], action) => {
 
 			const nextState = uniq([...state, ...uniqueTags]);
 			return nextState;
+		}
+		case SearchActions.CLEAR_IMAGES: {
+			return [];
 		}
 		default:
 			return state;

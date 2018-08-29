@@ -32,6 +32,9 @@ const images = (state = {}, action) => {
 				...normalizedResults
 			};
 		}
+		case SearchActions.CLEAR_IMAGES: {
+			return {};
+		}
 		default:
 			return state;
 	}

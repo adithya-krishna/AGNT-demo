@@ -43,16 +43,22 @@ class AppHeader extends Component {
 		searchApi(value, 1);
 	};
 
-	onFieldChange = e => {
-		const { name, value } = e.target;
-
-		this.setState({ [name]: value }, () => {
+	setSearchField = value => {
+		this.setState({ search: value }, () => {
+			if (value === '') {
+				this.props.clearImages();
+			}
 			this.searchApi(value);
 		});
 	};
 
+	onFieldChange = e => {
+		const { value } = e.target;
+		this.setSearchField(value);
+	};
+
 	onClearClick = e => {
-		this.setState({ search: '' });
+		this.setSearchField('');
 	};
 
 	render() {
@@ -101,6 +107,7 @@ export default connect(
 	{
 		searchApi: SearchActions.searchApi,
 		setSearchString: SearchActions.setSearchString,
+		clearImages: SearchActions.clearImages,
 		filterResults: FilterActions.filterResults,
 		sortResults: SortActions.sortResults
 	}
