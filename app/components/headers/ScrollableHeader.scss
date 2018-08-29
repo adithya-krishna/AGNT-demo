@@ -10,11 +10,11 @@
 
 		.filterLabel {
 			color: $textColor;
-			padding: $menuButtonYPadding $menuButtonXPadding;
+			padding-right: $menuButtonXPadding;
 
 			@include media('>phone', '<=#{$baseScreenWidth}') {
 				font-size: 1.2 * $unit;
-				padding: $phoneMenuButtonYPadding $phoneMenuButtonXPadding;
+				padding-right: $phoneMenuButtonXPadding;
 			}
 		}
 

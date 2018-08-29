@@ -1,6 +1,7 @@
 @import 'components/variables.scss';
 @import 'components/mixins.scss';
 @import 'components/animations.scss';
+$scrollbar-file: 'components/scrollbars.scss';
 
 $pageWrapperHeight: $stickyFooterRatio * $unit;
 $cardBorderRadius: 0.4 * $unit;

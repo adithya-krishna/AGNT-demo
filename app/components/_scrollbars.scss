@@ -1,0 +1,147 @@
+//todo - refactor to camel case
+.light-6::-webkit-scrollbar {
+	width: 0.6rem;
+}
+.light-6::-webkit-scrollbar-thumb {
+	background-color: rgba(223, 225, 230, 1);
+	border-radius: 0;
+}
+.light-6::-webkit-scrollbar-track {
+	background-color: rgba(223, 225, 230, 0.2);
+	border: 0.3rem solid transparent;
+	background-clip: content-box;
+}
+
+.light-8::-webkit-scrollbar {
+	width: 0.8rem;
+}
+.light-8::-webkit-scrollbar-thumb {
+	background-color: rgba(223, 225, 230, 1);
+	border-radius: 0;
+}
+.light-8::-webkit-scrollbar-track {
+	background-color: rgba(223, 225, 230, 0.2);
+	border: 0.4rem solid transparent;
+	background-clip: content-box;
+}
+
+.dark-6::-webkit-scrollbar {
+	width: 0.8rem;
+}
+.dark-6::-webkit-scrollbar-thumb {
+	background-color: rgba(201, 203, 208, 1);
+	border-radius: 0;
+}
+.dark-6::-webkit-scrollbar-track {
+	background-color: rgba(201, 203, 208, 0.2);
+	border: 0.4rem solid transparent;
+	background-clip: content-box;
+}
+
+.dark-8::-webkit-scrollbar {
+	width: 0.8rem;
+}
+.dark-8::-webkit-scrollbar-thumb {
+	background-color: rgba(201, 203, 208, 1);
+	border-radius: 0;
+}
+.dark-8::-webkit-scrollbar-track {
+	background-color: rgba(201, 203, 208, 0.1);
+}
+
+.hover {
+	&::-webkit-scrollbar {
+		width: 0.5rem;
+		display: none;
+	}
+	&:hover {
+		&::-webkit-scrollbar {
+			display: block;
+		}
+	}
+}
+.hover::-webkit-scrollbar-thumb {
+	background-color: rgba(223, 225, 230, 1);
+}
+.hover::-webkit-scrollbar-track {
+	background-color: rgba(223, 225, 230, 0.2);
+	border: 0.3rem solid transparent;
+	background-clip: content-box;
+}
+
+.hover-6-8::-webkit-scrollbar {
+	width: 0.6rem;
+	height: 0.6rem;
+	transition: 0.3s ease all;
+}
+.hover-6-8::-webkit-scrollbar:hover {
+	width: 0.8rem;
+	height: 0.8rem;
+}
+.hover-6-8::-webkit-scrollbar-thumb {
+	background-color: rgba(201, 203, 208, 1);
+	border-radius: 0;
+}
+.hover-6-8::-webkit-scrollbar-track {
+	background-color: rgba(201, 203, 208, 0.1);
+}
+
+.hover-spaced-6-8-dark::-webkit-scrollbar {
+	width: 1rem;
+	height: 1rem;
+}
+.hover-spaced-6-8-dark::-webkit-scrollbar-track {
+	background: #181f25;
+	/* change me to blue to match the background */
+}
+.hover-spaced-6-8-dark::-webkit-scrollbar-thumb {
+	background-color: rgba(201, 203, 208, 1);
+	border: 0.3rem #181f25 solid;
+	border-radius: 2rem;
+	/* change border color to blue to match the background */
+}
+.hover-spaced-6-8-dark::-webkit-scrollbar-thumb:hover {
+	border: 0.2rem #181f25 solid;
+}
+
+.hover-spaced-8-10-light::-webkit-scrollbar {
+	width: 1.2rem;
+	height: 1.2rem;
+	border-radius: 2rem;
+}
+.hover-spaced-8-10-light::-webkit-scrollbar-track {
+	background: transparent;
+	border-radius: 2rem;
+	/* change me to blue to match the background */
+}
+.hover-spaced-8-10-light::-webkit-scrollbar-thumb {
+	background-color: #b3b3b3;
+	border: 0.3rem white solid;
+	border-radius: 2rem;
+	/* change border color to blue to match the background */
+}
+.hover-spaced-8-10-light::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(0, 0, 0, 0.4);
+	border: 0.2rem white solid;
+}
+
+.hover-spaced-6-8-light::-webkit-scrollbar {
+	width: 1rem;
+	height: 1rem;
+	border-radius: 2rem;
+}
+.hover-spaced-6-8-light::-webkit-scrollbar-track {
+	background: transparent;
+	border-radius: 2rem;
+	/* change me to blue to match the background */
+}
+.hover-spaced-6-8-light::-webkit-scrollbar-thumb {
+	background-color: #b3b3b3;
+	border: 0.3rem white solid;
+	border-radius: 2rem;
+	/* change border color to blue to match the background */
+}
+.hover-spaced-6-8-light::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(0, 0, 0, 0.4);
+	border: 0.2rem white solid;
+}
